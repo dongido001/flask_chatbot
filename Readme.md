@@ -2,6 +2,8 @@
 
 This is a demo application showing how to build a Chat bot using Flask, Dialogflow and Pusher. You can read the tutorial on how it was built [here](https://pusher.com/tutorial/)
 
+![Sample working application](https://preview.ibb.co/kPuXXy/chat_bot_sample.gif "Sample working application")
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -14,7 +16,7 @@ This tutorial uses the following:
  - Pusher Channels (Create an account [here](https://dashboard.pusher.com/accounts/sign_up) or [login](https://dashboard.pusher.com/accounts/sign_in) here)
  - JavaScript (jQuery)
  - Dialogflow (Create an account [here](https://dashboard.pusher.com/accounts/sign_up) or [login](https://dashboard.pusher.com/accounts/sign_in) here)
- - [Ngrok](https://ngrok.com/download) (Download it here if you don't have it downloaded already)
+ - [Ngrok](https://ngrok.com/) (Download it [here](https://ngrok.com/download) if you don't have it already)
 
 ### Setting up the project
 
@@ -62,11 +64,11 @@ Then,
   - Next, make sure at the top menu that our bot is selected as the project name - `Movie-Bot`
   - Finally, click on the Create button to download the your API key
 
-  Your API key will be downloaded automatically. It's a JSON file. We'll need the file soon.
+Your API key will be downloaded automatically. It's a JSON file. We'll need the file soon.
 
- Next, copy the downloaded file to the root folder of the project - `flask_chatbot`
+Next, copy the downloaded file to the root folder of the project - `flask_chatbot`
 
- Then, update the keys in the .env file with the correct information:
+Then, update the keys in the .env file with the correct information:
  ```
  GOOGLE_APPLICATION_CREDENTIALS=*.json
  DIALOGFLOW_PROJECT_ID=project_id
