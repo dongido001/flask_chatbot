@@ -1,0 +1,5 @@
+Flask==1.0.2
+requests==2.18.4
+dialogflow==0.4.0
+python-dotenv==0.8.2
+pusher==2.0.1
