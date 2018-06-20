@@ -1,6 +1,6 @@
-# How to build a chat bot with Flask, Pusher Channels and Diaglogflow
+# How to build a chat bot with Flask, Pusher Channels and Dialogflow
 
-This is a demo application showing how to build a Chat bot using Flask, Dialogflow and Pusher. You can read the tutorial on how it was built [here](https://pusher.com/tutorial/)
+This is a demo application showing how to build a Chat bot using Flask, Dialogflow and Pusher. You can read the tutorial on how it was built [here](https://pusher.com/tutorials/chatbot-flask-dialogflow)
 
 ![Sample working application](https://image.ibb.co/e6pMQJ/chat_bot_sample.gif "Sample working application")
 
@@ -31,11 +31,11 @@ Next, create your environment keys:
 ```
 cp .env.example .env
 ```
-There are couple of keys you need to set in the '.env' file. The next section will show you how you can get this keys.
+There are couple of keys you need to set in the '.env' file. The next sections will show you how you can get these keys.
 
 #### Pusher
 
-Login to Pusher [account](https://dashboard.pusher.com/accounts/sign_in), create a new app and then get your API keys.
+Login to your Pusher [account](https://dashboard.pusher.com/accounts/sign_in), create a new app and then get your API keys.
 
  Next update the following keys in the `.env` file with the correct keys:
   ```
@@ -64,11 +64,11 @@ Then,
   - Next, make sure at the top menu that our bot is selected as the project name - `Movie-Bot`
   - Finally, click on the Create button to download the your API key
 
-Your API key will be downloaded automatically. It's a JSON file. We'll need the file soon.
+Your API key will be downloaded automatically. It's a JSON file.
 
 Next, copy the downloaded file to the root folder of the project - `flask_chatbot`
 
-Then, update the keys in the .env file with the correct information:
+Then, update the keys in the `.env` file with the correct information:
  ```
  GOOGLE_APPLICATION_CREDENTIALS=*.json
  DIALOGFLOW_PROJECT_ID=project_id
@@ -105,7 +105,7 @@ To get the app running:
  ```
  On windows? Activate it with the below:
  ```
-   Scripts\activate
+   env/Scripts/activate
  ```
 
  - Install the dependencies:
