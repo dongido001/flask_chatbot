@@ -1,7 +1,7 @@
 
 // Initialise Pusher
-const pusher = new Pusher('359d9d1c4e4dd13658ad', {
-    cluster: 'eu',
+const pusher = new Pusher('<YOUR_PUSHER_KEY_HERE>', {
+    cluster: '<YOUR_PUSHER_CLUSTER_HERE>',
     encrypted: true
 });
 
