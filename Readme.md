@@ -31,7 +31,7 @@ Next, create your environment keys:
 ```
 cp .env.example .env
 ```
-There are couple of keys you need to set in the '.env' file. The next sections will show you how you can get these keys.
+There are couple of keys you need to set in the `.env` file. The next sections will show you how you can get these keys.
 
 #### Pusher
 
