@@ -7,7 +7,6 @@ import pusher
 
 app = Flask(__name__)
 
-
 # initialize Pusher
 pusher_client = pusher.Pusher(
     app_id=os.getenv('PUSHER_APP_ID'),
@@ -15,7 +14,6 @@ pusher_client = pusher.Pusher(
     secret=os.getenv('PUSHER_SECRET'),
     cluster=os.getenv('PUSHER_CLUSTER'),
     ssl=True)
-
 
 @app.route('/')
 def index():
@@ -41,9 +39,7 @@ def get_movie_detail():
     except:
         response = "Could not get movie detail at the moment, please try again"
     
-    reply = {
-        "fulfillmentText": response,
-    }
+    reply = { "fulfillmentText": response }
     
     return jsonify(reply)
 
@@ -60,18 +56,27 @@ def detect_intent_texts(project_id, session_id, text, language_code):
         
         return response.query_result.fulfillment_text
 
-
 @app.route('/send_message', methods=['POST'])
 def send_message():
-    socketId = request.form['socketId']
+    try:
+        socketId = request.form['socketId']
+    except KeyError:
+        socketId = ''
+        
     message = request.form['message']
     project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
     fulfillment_text = detect_intent_texts(project_id, "unique", message, 'en')
     response_text = { "message":  fulfillment_text }
-    
 
-    pusher_client.trigger('movie_bot', 'new_message',
-                        {'human_message': message, 'bot_message': fulfillment_text})
+    pusher_client.trigger(
+        'movie_bot', 
+        'new_message', 
+        {
+            'human_message': message, 
+            'bot_message': fulfillment_text,
+        },
+        socketId
+    )
                         
     return jsonify(response_text)
 
